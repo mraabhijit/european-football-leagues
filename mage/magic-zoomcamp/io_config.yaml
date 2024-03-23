@@ -38,15 +38,6 @@ default:
   DUCKDB_SCHEMA: main
   # Google
   GOOGLE_SERVICE_ACC_KEY:
-    # type: service_account
-    # project_id: dtc-de-course-411615
-    # private_key_id: 5c4102237294318fe6bed9a923e46f86320b4ab0
-    # private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD2kP83CxbNcBnV\nc5Mqt5DKUbq+0LSxj00ucoteLdLzeKsbUUX3s5ceKxNzPPgRYMT8671xH60zmnbd\nAW7Y4eIYWcF4Y1e2ZuTpSe5LaAWx9sVIek/WiwveeaY3xj//+6LKeFZWi3xmQ5gY\nFq8FopIRTYPbmR98qm9vPNUkuxmDMuCbqujfAxTtwbbo0QAS67v8O8PDdf1OeRx0\nBV0o59DmK8BasfV+hPlXBdTKnm7mbng0UHIQDPRnQVKiTeShxu9qjVSKm+GFBtoM\nINJ1yM9wJT84XmrJDMdO6XWZhXx6oBsLxHeNE976Qz4oiunikjRG3sSEeOd4+ECi\nP94Z+X0bAgMBAAECggEAVxU19lBV0OAPV7qWlyc3HaXJAXy/3NhiZ42wGGax0yji\nsea+AfKtZEvNdk1pxeV6HWP7SBlqeEfNRFgtuK7qxjPpJ2Zaw8LKhXSFk59dJ5Ii\n8mq0iO8aFYy8foVn9DaBM+ZVhAKGwK2N6bAVR7W3xiGs+OG3Y7XkXpLLKspkA9hC\nT3fTkVW3Jb0Iz0zIyvJwntLfUBebmM2gkgnC5DEVMoJQX8LUDDyi0/TXci8Se6cH\nEjrmBfRNSH1qet3pNlX+MH2lBR5FoN7hsy6wwEJcdMRqddMViZY0QXq+NITQRcDc\nI2QycoNY67a/orMNCTrZEt9D0yW+XWakTJN+gRlk6QKBgQD9NzhfSB9Nz+ggAOyE\nXc6OmDfnccvzdWNhhqBGf/0osmvOmK36RNhLufkprzxs/0EhqrgzLORQJdTTtcVf\n6NBmk13wBAWixWbqBZb938KKrsyOipmQMADo9SOwtyYsjxGtY4cFjO8a/l4K1LJV\nY3uCTgMZtPB4eAcHz0vgnjpkSQKBgQD5Rw88JrBG9DfZAfcj8aSIwoXTNLoEn4VM\nmLoc6i6RDAtXcraUhBhbhQq6euWNlpPLl/IESwwSMEi+pgKuQAI8WCbmA14zkLgg\nAMhrbDYBsnd2SPCp/ipHnLDll15pwWqViWasVvSqmcIXnJz20Q41djxid+BSWHzO\nz8f53wtOQwKBgBhAoriVitIEGMJ/9CdVaMRFlg0n3BXsZ2Fe6Jj4B0JPnH3EJ92x\nnFncbR3t98akyBM2a8ATC6cViIXigg4GmXdJpBSp/fQyHgJKGMUmGlb4GQWKBt1F\ni8DEQe/aCuD3rwTBZJxGfFxEgrNc3dvJ1HmNiUR8DRAsxtebpjPUU9lpAoGBAIuY\ntLptvBfwGfpn9Fvnrcl8je8KPwXpw39yo/8fUfaedReCwSaIlw9hgPGPc1AIPDou\nnDS1RkxFR+ekFio45Eeg4h+7URy1dbdOWO53igMHS4ktLcE0+b5izFm2nAPDcgnO\nCXaHt7p2ItCQPwKlbjyYOxa1pSTYMwSqLYYL10v7AoGAKeN7R63qDC74ZIQI5ovX\ngP3qS0tSnw6aEjkWDc4uNoP4ljyf/PzwZxRPRcGBz/AnLprpnNrdWXl2dshA4pGw\nt7ihzw5UT6T8qpekJxgZJfrb3vSD5fc0O2s7UCLYputn3EGHndRJVcc1lvMgw7kk\n6DgHmKVBFYPlSOsAjyMPVso=\n-----END PRIVATE KEY-----\n"
-    # client_email: capstone@dtc-de-course-411615.iam.gserviceaccount.com
-    # auth_uri: "https://accounts.google.com/o/oauth2/auth"
-    # token_uri: "https://oauth2.googleapis.com/token"
-    # auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
-    # client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/capstone%40dtc-de-course-411615.iam.gserviceaccount.com"
   GOOGLE_SERVICE_ACC_KEY_FILEPATH: "../.secret/football-data.json"
   GOOGLE_LOCATION: US # Optional
   # MongoDB
