@@ -3,7 +3,7 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
-  - transform_football_org_data
+  - to_data_lake
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -29,8 +29,7 @@ blocks:
   status: executed
   timeout: null
   type: transformer
-  upstream_blocks:
-  - ingest_football_org
+  upstream_blocks: []
   uuid: transform_football_org_data
 - all_upstream_blocks_executed: true
   color: null
@@ -48,6 +47,22 @@ blocks:
   upstream_blocks:
   - transform_football_org_data
   uuid: create_dataframes
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: to_data_lake
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - ingest_football_org
+  uuid: to_data_lake
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

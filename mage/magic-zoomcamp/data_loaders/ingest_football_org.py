@@ -49,19 +49,32 @@ def load_data_from_api(*args, **kwargs):
         for i in range(value[1]):
             uri = base_url + comp + key + matchday + f"{i+1}"
             print(f"Getting data from {uri}")
-            if count%10 == 1:
+            if count > 10 and count%10 == 1:
                 time.sleep(60)
             try: 
                 response = requests.get(uri, headers=headers)
-                print(response)
-                print()
-                match_list[value[0]].append(response.json())
+                # print(response)
+                # print()
+                match_str = response.json()
+                data = str(match_str)
+                if "M'gladbach" in data:
+                    data = data.replace("M'gladbach", "Mgladbach")
+                    data = data.replace('\'', '"')
+                    data = data.replace("Mgladbach", "M'gladbach")
+                else:
+                    data = data.replace('\'', '"')  
+                
+                match_list[value[0]].append(data)
+                break
+                # print(match_list)
             except FileNotFoundError:
                 print("matchday data not available")
             count += 1
         print()
+    # print(match_list)
 
-    return match_list
+    df = pd.DataFrame({'data': match_list})
+    return df
 
 @test
 def test_output(output, *args) -> None:
