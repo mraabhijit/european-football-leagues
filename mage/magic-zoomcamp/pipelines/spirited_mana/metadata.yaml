@@ -1,68 +1,138 @@
 blocks:
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
-  - to_data_lake
+  - transform_football_org_data
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: ingest_football_org
+  name: ingest_football_org_data
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
-  upstream_blocks: []
-  uuid: ingest_football_org
-- all_upstream_blocks_executed: true
+  upstream_blocks:
+  - export_teams_data_to_data_lake
+  uuid: ingest_football_org_data
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
-  - create_dataframes
+  - export_football_org_data_to_data_lake
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
   name: transform_football_org_data
   retry_config: null
-  status: executed
-  timeout: null
-  type: transformer
-  upstream_blocks: []
-  uuid: transform_football_org_data
-- all_upstream_blocks_executed: true
-  color: null
-  configuration: {}
-  downstream_blocks: []
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: python
-  name: create_dataframes
-  retry_config: null
-  status: executed
+  status: failed
   timeout: null
   type: transformer
   upstream_blocks:
-  - transform_football_org_data
-  uuid: create_dataframes
-- all_upstream_blocks_executed: true
+  - ingest_football_org_data
+  uuid: transform_football_org_data
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - load_match_data_from_gcs
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: to_data_lake
+  name: export_football_org_data_to_data_lake
   retry_config: null
   status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - ingest_football_org
-  uuid: to_data_lake
+  - transform_football_org_data
+  uuid: export_football_org_data_to_data_lake
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - transform_teams_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: ingest_teams_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: ingest_teams_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - export_teams_data_to_data_lake
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: transform_teams_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - ingest_teams_data
+  uuid: transform_teams_data
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - ingest_football_org_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_teams_data_to_data_lake
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - transform_teams_data
+  uuid: export_teams_data_to_data_lake
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - create_tables_for_bigquery
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_match_data_from_gcs
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - export_football_org_data_to_data_lake
+  uuid: load_match_data_from_gcs
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: create_tables_for_bigquery
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_match_data_from_gcs
+  uuid: create_tables_for_bigquery
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
