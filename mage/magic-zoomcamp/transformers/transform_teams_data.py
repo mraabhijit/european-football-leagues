@@ -32,12 +32,17 @@ def transform(data, *args, **kwargs):
             year_founded = league_data['founded']
             stadium = league_data['venue']
 
-            if league_data['coach']['lastName'] != '':
-                coach = (league_data['coach']['firstName'] + ' ' + league_data['coach']['lastName']).strip()
+            # if league_data['coach']['lastName'] != '':
+            #     coach = (league_data['coach']['firstName'] + ' ' + league_data['coach']['lastName']).strip()
+                
+            coach = str(league_data['coach']['firstName']) + " " + str(league_data['coach']['lastName'])
+            coach = coach.strip()
+
             coach_nationality = league_data['coach']['nationality']
 
             df.loc[len(df.index)] = [team_id, team, full_name, abbv, team_crest, address, country, year_founded, stadium, coach, coach_nationality]
-        # print(team_id, team, full_name, abbv, team_crest, address, country, year_founded, stadium, coach, coach_nationality)
+
+    # print(df)
     return df
 
 

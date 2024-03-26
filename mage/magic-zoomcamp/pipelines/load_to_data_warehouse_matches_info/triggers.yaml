@@ -1,0 +1,12 @@
+triggers:
+- envs: []
+  last_enabled_at: 2024-03-26 15:09:05.038110
+  name: API_TRIGGER_CREATED_FROM_CODE
+  pipeline_uuid: load_to_data_warehouse_matches_info
+  schedule_interval: null
+  schedule_type: api
+  settings: null
+  sla: null
+  start_time: 2024-03-26 15:09:05.038040
+  status: active
+  variables: null

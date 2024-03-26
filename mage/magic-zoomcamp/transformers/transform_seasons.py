@@ -20,21 +20,11 @@ def transform(data, *args, **kwargs):
         Anything (e.g. data frame, dictionary, array, int, str, etc.)
     """
     # Specify your transformation logic here
+    df_seasons =  data[['league_id', 'season', 'season_start_date', 'season_end_date']]
+    df_seasons = df_seasons.drop_duplicates(subset='league_id', keep='first', ignore_index=True)
 
-    df_matches = data[['match_id', 'home_team', 'away_team', 'home_score', 
-    'away_score', 'home_team_points_earned', 'away_team_points_earned', 'home_team_gd', 'away_team_gd']]
+    return df_seasons
 
-    # columns_match_info = ['league', 'league_id',
-    #    'matchday', 'match_id', 'match_date',
-    #    'match_referee']
-
-    # df_match_info = data[columns_match_info]
-
-    # df_seasons =  data[['league_id', 'season', 'season_start_date', 'season_end_date']]
-    # df_seasons = df_seasons.drop_duplicates(subset='league_id', keep='first', ignore_index=True)
-
-    # return df_matches, df_match_info, df_seasons
-    return df_matches
 
 @test
 def test_output(output, *args) -> None:

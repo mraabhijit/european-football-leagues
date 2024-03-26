@@ -51,23 +51,14 @@ def load_data_from_api(*args, **kwargs):
                 response = requests.get(uri, headers=headers)
 
                 data = response.json()
-                # data = str(match_str)
-                # if "M'gladbach" in data:
-                #     data = data.replace("M'gladbach", "Mgladbach")
-                #     data = data.replace('\'', '"')
-                #     data = data.replace("Mgladbach", "M'gladbach")
-                # else:
-                #     data = data.replace('\'', '"')  
                 
                 match_list[value[0]].append(data)
 
             except FileNotFoundError:
                 print("matchday data not available")
             count += 1
-        # print()
         print(f"Successfully got data for {value[0]}")
 
-    # df = pd.DataFrame({'data': match_list})
     return match_list
 
 @test
