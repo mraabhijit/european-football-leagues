@@ -19,8 +19,6 @@ emr_config:
   # You can create a key pair in page https://console.aws.amazon.com/ec2#KeyPairs and download the key file.
   # ec2_key_name: '[ec2_key_pair_name]'
 
-# run_pipeline_in_one_process: true
-
 spark_config:
   # Application name
   app_name: 'my spark app'
@@ -53,7 +51,5 @@ notification_config:
     webhook_url: "{{ env_var('MAGE_SLACK_WEBHOOK_URL') }}"
   teams_config:
     webhook_url: "{{ env_var('MAGE_TEAMS_WEBHOOK_URL') }}"
-project_uuid: 210f9d14d05a4e9bb5aa049cbda96579
-help_improve_mage: true
-
-
+project_uuid: c9d3baf480f64e9aaa17e6716ffd73d4
+help_improve_mage: false
