@@ -18,19 +18,20 @@ services:
       POSTGRES_PORT: ${POSTGRES_PORT}
     ports:
       - 6789:6789
+      - 4040:4040
     volumes:
       - .:/home/src/
       - ~/Documents/secrets/personal-gcp.json:/home/src/personal-gcp.json
     restart: on-failure:5
-  postgres:
-    image: postgres:14
-    restart: on-failure
-    container_name: ${PROJECT_NAME}-postgres
-    env_file:
-      - .env
-    environment:
-      POSTGRES_DB: ${POSTGRES_DBNAME}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    ports:
-      - "${POSTGRES_PORT}:5432"
+  # postgres:
+  #   image: postgres:14
+  #   restart: on-failure
+  #   container_name: ${PROJECT_NAME}-postgres
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     POSTGRES_DB: ${POSTGRES_DBNAME}
+  #     POSTGRES_USER: ${POSTGRES_USER}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #   ports:
+  #     - "${POSTGRES_PORT}:5432"
