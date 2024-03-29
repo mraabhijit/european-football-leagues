@@ -35,7 +35,7 @@ spark_config:
   spark_jars: []
   # Path where Spark is installed on worker nodes
   # e.g. spark_home: '/usr/lib/spark'
-  spark_home: null
+  spark_home:
   # List of key-value pairs to be set in SparkConf
   # e.g., others: {'spark.executor.memory': '4g', 'spark.executor.cores': '2'}
   others: {}
@@ -57,3 +57,9 @@ project_uuid: 210f9d14d05a4e9bb5aa049cbda96579
 help_improve_mage: true
 
 
+features:
+  dbt_v2: false
+pipelines:
+  settings:
+    triggers:
+      save_in_code_automatically: true

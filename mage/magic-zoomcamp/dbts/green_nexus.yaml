@@ -1,0 +1,1 @@
+--select models/* --vars '{"is_test_run": false}'

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: staging
+    database: dtc-de-course-411615
+    schema: capstone
+
+    tables:
+      - name: matches
+      - name: matches_info
+      - name: teams

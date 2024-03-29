@@ -123,6 +123,9 @@ default:
   WEAVIATE_INSTANCE_API_KEY: YOUR-WEAVIATE-API-KEY
   WEAVIATE_INFERENCE_API_KEY: YOUR-OPENAI-API-KEY
   WEAVIATE_COLLECTION: collectionn_name
+  # DBT
+  DBT_PROFILES_DIR: "home/src/magic-zoomcamp/dbt/football"
+  DBT_PROJECT_DIR: "home/src/magic-zoomcamp/dbt/football"
 
 dev:
     # PostgresSQL
@@ -133,3 +136,6 @@ dev:
   POSTGRES_PASSWORD: "{{ env_var('POSTGRES_PASSWORD') }}"
   POSTGRES_HOST: "{{ env_var('POSTGRES_HOST') }}"
   POSTGRES_PORT: "{{ env_var('POSTGRES_PORT') }}"
+  # DBT
+  DBT_PROFILES_DIR: "home/src/magic-zoomcamp/dbt/football"
+  DBT_PROJECT_DIR: "home/src/magic-zoomcamp/dbt/football"
