@@ -16,7 +16,7 @@ def get_keys(path):
     with open(path) as f:
         return json.load(f)
 
-keys = get_keys(".secret/football-data.json")
+keys = get_keys("/home/src/magic-zoomcamp/.secret/football-data.json")
 headers = { 
     'X-Auth-Token': keys["X-Auth-Token"] 
 }

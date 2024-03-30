@@ -10,3 +10,14 @@ triggers:
   start_time: 2024-03-30 11:30:00
   status: active
   variables: {}
+- envs: []
+  last_enabled_at: 2024-03-30 16:45:08.621123
+  name: API_TRIGGER_FIRST_PIPELINE
+  pipeline_uuid: ingest_data_to_data_lake
+  schedule_interval: null
+  schedule_type: api
+  settings: null
+  sla: null
+  start_time: 2024-03-30 16:44:00
+  status: active
+  variables: {}
