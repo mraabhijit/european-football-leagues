@@ -1,22 +1,20 @@
 blocks:
 - all_upstream_blocks_executed: true
   color: null
-  configuration:
-    file_source:
-      path: data_loaders/load_data_from_gcs.py
+  configuration: {}
   downstream_blocks:
   - transform_match_info_table
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: load_data_from_gcs
+  name: load_matches_info_from_gcs
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: load_data_from_gcs
+  uuid: load_matches_info_from_gcs
 - all_upstream_blocks_executed: false
   color: null
   configuration:
@@ -30,11 +28,11 @@ blocks:
   language: python
   name: transform_match_info_table
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
   type: transformer
   upstream_blocks:
-  - load_data_from_gcs
+  - load_matches_info_from_gcs
   uuid: transform_match_info_table
 - all_upstream_blocks_executed: false
   color: null
@@ -49,7 +47,7 @@ blocks:
   language: python
   name: export_matches_info_to_bq
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:

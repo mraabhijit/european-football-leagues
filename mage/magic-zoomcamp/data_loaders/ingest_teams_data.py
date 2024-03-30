@@ -8,6 +8,7 @@ if 'data_loader' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
+print("Started pipeline: ingest_data_to_data_lake_teams ...")
 
 # Define function to get key and read key for football-data.org
 def get_keys(path):
@@ -30,6 +31,8 @@ def load_data_from_api(*args, **kwargs):
     """
     Template for loading data from API
     """
+    print("Started running ingest_teams_data.py ...")
+
     base_uri = "https://api.football-data.org/v4/competitions/"
 
     team_dict = {}
@@ -44,6 +47,8 @@ def load_data_from_api(*args, **kwargs):
             team_dict[value] = response.json()['teams']
         except FileNotFoundError:
             print("Data not available at {uri}")
+
+    print("...succesfully ran ingest_teams_data.py")
     
     return team_dict
 

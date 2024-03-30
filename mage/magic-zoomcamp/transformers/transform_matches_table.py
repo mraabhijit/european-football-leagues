@@ -3,6 +3,7 @@ if 'transformer' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
+print("Started running transform_matches_table.py ...")
 
 @transformer
 def transform(data, *args, **kwargs):
@@ -22,6 +23,7 @@ def transform(data, *args, **kwargs):
 
     return df_matches
 
+print("...successfully ran transform_matches_table.py")
 
 @test
 def test_output(output, *args) -> None:

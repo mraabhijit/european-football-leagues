@@ -7,6 +7,7 @@ from os import path
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
+print("Started running export_teams_data_to_data_lake.py ...")
 
 @data_exporter
 def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
@@ -27,3 +28,5 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
         bucket_name,
         object_key,
     )
+
+print("...successfully ran export_teams_data_to_data_lake.py")

@@ -38,7 +38,7 @@ default:
   DUCKDB_SCHEMA: main
   # Google
   # GOOGLE_SERVICE_ACC_KEY:
-  GOOGLE_SERVICE_ACC_KEY_FILEPATH: "/home/src/capstone.json"
+  GOOGLE_SERVICE_ACC_KEY_FILEPATH: "/home/src/magic-zoomcamp/.secret/capstone.json"
   GOOGLE_LOCATION: US # Optional
   # MongoDB
   # Specify either the connection string or the (host, password, user, port) to connect to MongoDB.

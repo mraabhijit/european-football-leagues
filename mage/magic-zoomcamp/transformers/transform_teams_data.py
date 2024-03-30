@@ -3,6 +3,8 @@ if 'transformer' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
+print("Started running transform_teams_data.py ...")
+
 import pandas as pd
 
 league_teams = {"Premier League": 20, 
@@ -42,7 +44,7 @@ def transform(data, *args, **kwargs):
 
             df.loc[len(df.index)] = [team_id, team, full_name, abbv, team_crest, address, country, year_founded, stadium, coach, coach_nationality]
 
-    # print(df)
+    print("...successfully ran transform_teams_data.py")
     return df
 
 

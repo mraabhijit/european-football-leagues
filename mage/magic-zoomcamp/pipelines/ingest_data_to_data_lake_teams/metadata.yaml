@@ -12,7 +12,7 @@ blocks:
   language: python
   name: ingest_teams_data
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks: []
@@ -30,7 +30,7 @@ blocks:
   language: python
   name: transform_teams_data
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
   type: transformer
   upstream_blocks:
@@ -49,7 +49,7 @@ blocks:
   language: python
   name: export_teams_data_to_data_lake
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:

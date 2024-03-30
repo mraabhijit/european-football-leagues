@@ -26,7 +26,7 @@ Install docker, docker-compose, terraform, git, any IDE, GCP account.
 
     **NOTE: If you are using a paid version of the API, your wait times will be lower than the free version, hence in file "mage/magic-zoomcamp/data_loaders/ingest_football_org_data.py" change the lines 48, 49 accordingly. If you are on a free version, the max number of hits per minute is 10 hence the data load takes the bulk of time.**
 
-3. Save your gcp key to 2 folders as: "mage/magic-zoomcamp/capstone.json" and ".secret/capstone.json"
+3. Save your gcp key to 2 folders as: "mage/magic-zoomcamp/.secret/capstone.json" and ".secret/capstone.json"
 4. Update the variables.tf and main.tf with your gcp info like variable "project", "region", "location", "bq_dataset_name", "gcs_bucket_name" defaults
 5. cd terraform
     terraform plan

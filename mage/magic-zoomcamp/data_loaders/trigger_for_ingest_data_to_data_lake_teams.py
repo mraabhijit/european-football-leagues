@@ -2,6 +2,7 @@ from mage_ai.orchestration.triggers.api import trigger_pipeline
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 
+print("Triggering pipeline: ingest_data_to_data_lake_teams.py ...")
 
 @data_loader
 def trigger(*args, **kwargs):

@@ -7,6 +7,8 @@ from os import path
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
+print("Started running export_football_org_data_to_data_lake.py...")
+
 
 @data_exporter
 def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
@@ -29,6 +31,7 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
         # format = 'json'
     )
 
+    print("...successfully ran export_football_org_data_to_data_lake.py")
 
 # Export the DataFrame as a JSON file to GCS
 # gcs_loader.export(df, bucket_name='your_bucket_name', object_key='your_object_key.json', format='json')

@@ -5,7 +5,7 @@ football:
       dataset: capstone
       job_execution_timeout_seconds: 6000
       job_retries: 1
-      keyfile: /home/src/capstone.json
+      keyfile: /home/src/magic-zoomcamp/.secret/capstone.json
       location: US
       method: service-account
       priority: interactive

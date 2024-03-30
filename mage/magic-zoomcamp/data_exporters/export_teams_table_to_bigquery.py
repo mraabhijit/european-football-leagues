@@ -7,6 +7,7 @@ from os import path
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
+print("Started running export_teams_table_to_bigquery.py ...")
 
 @data_exporter
 def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
@@ -25,3 +26,5 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
         table_id,
         if_exists='replace',  # Specify resolution policy if table name already exists
     )
+
+print("...successfully ran export_teams_table_to_bigquery.py")

@@ -2,6 +2,7 @@ from mage_ai.orchestration.triggers.api import trigger_pipeline
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 
+print("Triggering pipeline: load_teams_to_bigquery")
 
 @data_loader
 def trigger(*args, **kwargs):

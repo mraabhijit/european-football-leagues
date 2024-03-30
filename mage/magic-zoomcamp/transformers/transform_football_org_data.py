@@ -5,6 +5,7 @@ if 'test' not in globals():
 
 import pandas as pd
 
+print("Started running transform_football_org_data.py...")
 
 def get_match_points(home_score: int, away_score: int) -> tuple[int, int]:
 
@@ -61,7 +62,7 @@ def transform(data, *args, **kwargs):
 
     for league, total_matchdays in leagues.items():
 
-        print(f"Getting data for {league}...")
+        # print(f"Getting data for {league}...")
         # Get Season, League_id, first and last matchday dates only once as that is a constant
         firstday_data = data[league][0]
         SEASON = int(firstday_data['filters']['season'])
@@ -114,6 +115,7 @@ def transform(data, *args, **kwargs):
     df.season_end_date = pd.to_datetime(df.season_end_date)
     df.match_date = pd.to_datetime(df.match_date).dt.date
     df.match_date = pd.to_datetime(df.match_date)
+    print("...successfully ran transform_football_org_data.py")
     return df
 
 

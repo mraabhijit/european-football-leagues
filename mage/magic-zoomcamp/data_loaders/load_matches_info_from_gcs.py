@@ -7,7 +7,7 @@ if 'data_loader' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
-print("Started pipeline: dbt_models")
+print("Started pipeline load_to_data_warehouse_matches_info...")
 
 @data_loader
 def load_from_google_cloud_storage(*args, **kwargs):
@@ -17,20 +17,19 @@ def load_from_google_cloud_storage(*args, **kwargs):
 
     Docs: https://docs.mage.ai/design/data-loading#googlecloudstorage
     """
-    print("Started running load_teams_data_from_gcs.py ...")
-
+    print("Started running load_matches_info_from_gcs.py ...")
     config_path = path.join(get_repo_path(), 'io_config.yaml')
     config_profile = 'default'
 
     bucket_name = 'capstone-411615'
-    object_key = 'teams.parquet'
+    object_key = 'matches.parquet'
 
     return GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).load(
         bucket_name,
         object_key,
     )
 
-print("...successfully ran load_teams_data_from_gcs.py")
+print("...successfully ran load_matches_info_from_gcs.py")
 
 @test
 def test_output(output, *args) -> None:
