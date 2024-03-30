@@ -12,7 +12,7 @@ def trigger(*args, **kwargs):
     """
 
     trigger_pipeline(
-        'load_to_data_warehouse_seasons',        # Required: enter the UUID of the pipeline to trigger
+        'load_teams_to_bigquery',        # Required: enter the UUID of the pipeline to trigger
         variables={'env': 'default'},           # Optional: runtime variables for the pipeline
         check_status=True,     # Optional: poll and check the status of the triggered pipeline
         error_on_failure=False, # Optional: if triggered pipeline fails, raise an exception

@@ -4,7 +4,8 @@ blocks:
   configuration:
     file_source:
       path: data_loaders/ingest_teams_data.py
-  downstream_blocks: []
+  downstream_blocks:
+  - transform_teams_data
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -16,12 +17,13 @@ blocks:
   type: data_loader
   upstream_blocks: []
   uuid: ingest_teams_data
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     file_source:
       path: transformers/transform_teams_data.py
-  downstream_blocks: []
+  downstream_blocks:
+  - export_teams_data_to_data_lake
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -31,14 +33,16 @@ blocks:
   status: not_executed
   timeout: null
   type: transformer
-  upstream_blocks: []
+  upstream_blocks:
+  - ingest_teams_data
   uuid: transform_teams_data
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     file_source:
       path: data_exporters/export_teams_data_to_data_lake.py
-  downstream_blocks: []
+  downstream_blocks:
+  - trigger_for_load_to_data_warehouse_matches
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -48,9 +52,10 @@ blocks:
   status: not_executed
   timeout: null
   type: data_exporter
-  upstream_blocks: []
+  upstream_blocks:
+  - transform_teams_data
   uuid: export_teams_data_to_data_lake
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []
@@ -63,7 +68,8 @@ blocks:
   status: updated
   timeout: null
   type: data_loader
-  upstream_blocks: []
+  upstream_blocks:
+  - export_teams_data_to_data_lake
   uuid: trigger_for_load_to_data_warehouse_matches
 cache_block_output_in_memory: false
 callbacks: []

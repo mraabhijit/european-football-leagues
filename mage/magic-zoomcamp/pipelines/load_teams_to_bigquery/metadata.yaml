@@ -68,8 +68,8 @@ settings:
   triggers: null
 spark_config: {}
 tags:
-- sixth_pipeline
 - data_warehousing_complete
+- fifth_pipeline
 type: python
 uuid: load_teams_to_bigquery
 variables_dir: /home/src/mage_data/magic-zoomcamp

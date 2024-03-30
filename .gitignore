@@ -2,3 +2,4 @@
 .json
 .ipynb_checkpoints/
 mage/docker-src/
+.terrform/
