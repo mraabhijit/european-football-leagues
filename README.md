@@ -6,6 +6,7 @@
 - [Strategy](#strategy)
 - [Prerequisities](#prerequisities)
 - [Steps to Follow](#steps-to-follow)
+- [Dashboard](#dashboard)
 - [Next Steps](#next-steps)
 - [Contributors](#contributors)
 - [Acknowledgements](#acknowledgements)
@@ -165,6 +166,10 @@ The link to dashboard can be found in this link: https://lookerstudio.google.com
 ### 8. Remove Resources:
 
 Once the project is complete. Please remember to close mage first by running `docker-compose down` in a new terminal on your PC/VM by changing directory to `mage`. Lastly, close down the GCP resources by a simple `terraform destroy` from `terraform` directory.
+
+## [Dashbaord](#dashboard)
+
+Add dahboard pages screenshot here
 
 ## [Next Steps](#next-steps)
 
