@@ -167,7 +167,7 @@ The link to dashboard can be found in this link: https://lookerstudio.google.com
 
 Once the project is complete. Please remember to close mage first by running `docker-compose down` in a new terminal on your PC/VM by changing directory to `mage`. Lastly, close down the GCP resources by a simple `terraform destroy` from `terraform` directory.
 
-## [Dashbaord](#dashboard)
+## [Dashboard](#dashboard)
 
 Add dahboard pages screenshot here
 
