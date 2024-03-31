@@ -168,7 +168,13 @@ Once the project is complete. Please remember to close mage first by running `do
 
 ## [Dashboard](#dashboard)
 
-Add dahboard pages screenshot here
+Link to the PDF version of the dashbaord is here: https://github.com/mraabhijit/european-football-leagues/blob/main/dashboard/EUROPEAN_FOOTBALL.pdf
+
+Some of them being:
+
+![League Standings](images/league_standings.PNG)
+
+![Matchday Rally](images/matchday_rally.PNG)
 
 ## [Next Steps](#next-steps)
 
