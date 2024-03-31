@@ -135,7 +135,7 @@ This will for the first time pull the mageai docker image and fire up the mage e
 
 Open up your browser and go to http://localhost:6789/overview mage dashboard similar to below, open up a new terminal.
 
-[Mage_Dashboard](images/Mage_dashboard.PNG)
+![Mage_Dashboard](images/Mage_dashboard.PNG)
 
 In your new terminal under mage directory, run the following to trigger the pipeline to start and relax. The entire pipeline shall run for about 20-25 mins due to the API hit request limits of 10/minute.
 
@@ -143,7 +143,7 @@ In your new terminal under mage directory, run the following to trigger the pipe
 
 Now go to the mage dashboard, on the left side as below to see the running pipelines. You can also check the logs for further information.
 
-[Mage_Pipeline_Runs](images/Mage_Pipeline_Runs.png)
+![Mage_Pipeline_Runs](images/Mage_Pipeline_Runs.png)
 
 Once the pipeline completes, go to your GCP Bucket, there should ne 2 files called `matches.parquet` and `teams.parquet`.
 And in your Bigquery dataset, the following tables should be present:
