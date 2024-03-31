@@ -40,7 +40,7 @@ partitioned on the `leagues` feature as the data is essentially from different l
 
 Finally the tables are visualized in `Looker Studio`. Link to which is provided in a later section.
 
-![Architecture](images/Architecture.PNG)
+![Architecture](images/Architecture.png)
 
 ## [Prerequisities](#prerequisities)
 
