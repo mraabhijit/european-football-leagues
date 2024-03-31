@@ -1,30 +1,74 @@
 # European Football Leagues
 
 
-### Strategy
+## Strategy
 
-source --> gcs (data lake) (mage)
-gcs --> bq (data warehouse) (mage)
-bq --> bq (transformation) (mage[dbt])
-bq --> dashboard (powerbi/looker)
+Insert DAG Image here
 
+## Prerequisities
 
-### Prerequisities
+    - docker
+    - docker-compose
+    - terraform
+    - git
+    - any IDE
+    - GCP account
+    - gcloud (if not working on a GCP VM)
 
-Install docker, docker-compose, terraform, git, any IDE, GCP account.
+## Steps to Follow:
 
-# Steps to Follow:
+1. Git clone the repo: 
 
-1. Git clone the repo:
+`git clone https://github.com/mraabhijit/european-football-leagues.git`
 
-2. Create account in (https://www.football-data.org/)
-   Upon creating the account, you will receive an email with the API Key for the account. Save it in the following format :
-   {
-    "X-Auth-Token": "..."
-    }
-    and save as football-data.json in a folder as mage/magic-zoomcamp/.secret/football-data.json
+2. Create your cloud infrastructure using terraform:
 
-    **NOTE: If you are using a paid version of the API, your wait times will be lower than the free version, hence in file "mage/magic-zoomcamp/data_loaders/ingest_football_org_data.py" change the lines 48, 49 accordingly. If you are on a free version, the max number of hits per minute is 10 hence the data load takes the bulk of time.**
+`cd terraform`
+
+Change the following variables as per your setup/keep the existing ones:
+
+- in variables.tf, the default values of
+    - variable "project"
+    - variable "region"
+    - variable "location"
+    - variable "bq_dataset_name"
+    - variable "gcs_bucket_name"
+- in main.tf, 
+    - rename "capstone-411615" to default used for "gcs_bucket_name"
+    - rename "capstone" to default used for "bq_dataset_name"
+
+Once the names are setup follow the following commands:
+
+```
+terraform init
+terraform plan
+terraform apply
+```
+**NOTE: terraform plan is to see what changes/resources are getting created. This step is optional but recommended.**
+
+Once the commands are run, go to your GCP Console and check whether the GCS bucket and BQ dataset have been created.
+
+3. Create the .env file by 
+
+```
+cd ..
+cd mage
+cp dev.env .env
+```
+
+This will create a new file called .env and will have the variables needed for the project to run set up. Change the credentials under `GCP` and `Football-org` as they are user specific. 
+
+**NOTE: Make sure to use the same credentials as set up in `terraform/variables.tf`.**
+
+4. Create account in (https://www.football-data.org/)
+   
+Upon creating the account, you will receive an email with the API Key for the account. Save it to the .env file created in previous step under `X_AUTH_TOKEN` without quotes in directory `mage/.env`.
+
+If your API key is `123qwert`, your `.env` file should look like this:
+
+`X_AUTH_TOKEN=123qwert`
+
+**NOTE: If you are using a paid version of the API, your wait times will be lower than the free version, hence in file "mage/magic-zoomcamp/data_loaders/ingest_football_org_data.py" change the lines 48, 49 accordingly. If you are on a free version, the max number of hits per minute is 10 hence the data load takes the bulk of time.**
 
 3. Save your gcp key to 2 folders as: "mage/magic-zoomcamp/.secret/capstone.json" and ".secret/capstone.json"
 4. Update the variables.tf and main.tf with your gcp info like variable "project", "region", "location", "bq_dataset_name", "gcs_bucket_name" defaults
