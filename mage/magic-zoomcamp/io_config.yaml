@@ -38,7 +38,7 @@ default:
   DUCKDB_SCHEMA: main
   # Google
   # GOOGLE_SERVICE_ACC_KEY:
-  GOOGLE_SERVICE_ACC_KEY_FILEPATH: "/home/src/magic-zoomcamp/.secret/capstone.json"
+  GOOGLE_SERVICE_ACC_KEY_FILEPATH: "{{ env_var('GOOGLE_SERVICE_ACC_KEY_FILEPATH') }}"
   GOOGLE_LOCATION: US # Optional
   # MongoDB
   # Specify either the connection string or the (host, password, user, port) to connect to MongoDB.
@@ -124,8 +124,8 @@ default:
   WEAVIATE_INFERENCE_API_KEY: YOUR-OPENAI-API-KEY
   WEAVIATE_COLLECTION: collectionn_name
   # DBT
-  DBT_PROFILES_DIR: "home/src/magic-zoomcamp/dbt/football"
-  DBT_PROJECT_DIR: "home/src/magic-zoomcamp/dbt/football"
+  DBT_PROFILES_DIR: "{{ env_var('DBT_PROFILES_DIR') }}"
+  DBT_PROJECT_DIR: "{{ env_var('DBT_PROJECT_DIR') }}"
 
 dev:
     # PostgresSQL
@@ -137,5 +137,5 @@ dev:
   POSTGRES_HOST: "{{ env_var('POSTGRES_HOST') }}"
   POSTGRES_PORT: "{{ env_var('POSTGRES_PORT') }}"
   # DBT
-  DBT_PROFILES_DIR: "home/src/magic-zoomcamp/dbt/football"
-  DBT_PROJECT_DIR: "home/src/magic-zoomcamp/dbt/football"
+  DBT_PROFILES_DIR: "{{ env_var('DBT_PROFILES_DIR') }}"
+  DBT_PROJECT_DIR: "{{ env_var('DBT_PROJECT_DIR') }}"

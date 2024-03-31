@@ -1,13 +1,17 @@
 from mage_ai.settings.repo import get_repo_path
 from mage_ai.io.config import ConfigFileLoader
 from mage_ai.io.google_cloud_storage import GoogleCloudStorage
+import os
 from os import path
+from dotenv import main
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
 print("Started pipeline: dbt_models")
+
+main.load_dotenv()
 
 @data_loader
 def load_from_google_cloud_storage(*args, **kwargs):
@@ -22,7 +26,7 @@ def load_from_google_cloud_storage(*args, **kwargs):
     config_path = path.join(get_repo_path(), 'io_config.yaml')
     config_profile = 'default'
 
-    bucket_name = 'capstone-411615'
+    bucket_name = os.getenv('STORAGE_BUCKET_NAME')
     object_key = 'teams.parquet'
 
     return GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).load(

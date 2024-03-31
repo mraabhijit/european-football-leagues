@@ -1,7 +1,9 @@
 import io
+import os
 import pandas as pd
 import requests
 import json
+from dotenv import main
 
 if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
@@ -10,15 +12,13 @@ if 'test' not in globals():
 
 print("Started pipeline: ingest_data_to_data_lake_teams ...")
 
-# Define function to get key and read key for football-data.org
-def get_keys(path):
-    with open(path) as f:
-        return json.load(f)
+# Get footall-org-data key
+main.load_dotenv()
 
-keys = get_keys("/home/src/magic-zoomcamp/.secret/football-data.json")
 headers = { 
-    'X-Auth-Token': keys["X-Auth-Token"] 
+    'X-Auth-Token': os.getenv('X_AUTH_TOKEN')
 }
+
 
 teams = {"PL": "Premier League", 
         "BL1": "Bundesliga",

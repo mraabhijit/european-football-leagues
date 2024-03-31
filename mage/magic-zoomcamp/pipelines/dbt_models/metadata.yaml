@@ -18,7 +18,7 @@ blocks:
   language: yaml
   name: dbt_build_models
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: dbt
   upstream_blocks: []

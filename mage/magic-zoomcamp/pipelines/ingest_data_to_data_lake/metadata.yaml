@@ -43,7 +43,7 @@ blocks:
   language: python
   name: export_football_org_data_to_data_lake
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:

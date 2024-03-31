@@ -1,1 +1,1 @@
-tqdm
+python-dotnet

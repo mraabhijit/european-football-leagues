@@ -2,4 +2,6 @@
 .json
 .ipynb_checkpoints/
 mage/docker-src/
-.terrform/
+terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.6.0/linux_amd64/terraform-provider-google_v5.6.0_x5
+.env
+terraform/.terraform/providers/registry.terraform.io/hashicorp/external/2.3.3/linux_amd64/terraform-provider-external_v2.3.3_x5
