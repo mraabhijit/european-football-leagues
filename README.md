@@ -56,7 +56,13 @@ Finally the tables are visualized in `Looker Studio`. Link to which is provided 
 
 ### 1. Git clone the repo: 
 
+Run the following command to clone the repo:
+
 `git clone https://github.com/mraabhijit/european-football-leagues.git`
+
+And install `python-dotenv` if not installed:
+
+`pip install -r requirements.txt`
 
 ### 2. Create your cloud infrastructure using terraform:
 
