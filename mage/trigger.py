@@ -25,4 +25,6 @@ class MageTrigger:
         response = requests.post(endpoint, headers=headers, json=payload)
         return response
 
-MageTrigger.trigger_pipeline("ingest_data_to_data_lake")
+
+if __name__=='__main__':
+    MageTrigger.trigger_pipeline("ingest_data_to_data_lake")
