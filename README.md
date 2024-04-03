@@ -145,7 +145,7 @@ Now go to the mage dashboard, on the left side as below to see the running pipel
 
 ![Mage_Pipeline_Runs](images/Mage_Pipeline_Runs.png)
 
-Once the pipeline completes, go to your GCP Bucket, there should ne 2 files called `matches.parquet` and `teams.parquet`.
+Once the pipeline completes, go to your GCP Bucket, there should be 2 files called `matches.parquet` and `teams.parquet`.
 And in your Bigquery dataset, the following tables should be present:
 
     1. stg_matches.sql
