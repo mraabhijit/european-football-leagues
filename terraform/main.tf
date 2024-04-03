@@ -8,15 +8,15 @@ terraform {
 }
 
 provider "google" {
-  credentials = file(var.credentials)
-  project     = var.project
-  region      = var.region
+  credentials = file(TF_VAR_SERVICE_ACCOUNT_FILE)
+  project     = TF_VAR_GCP_PROJECT_ID
+  region      = TF_VAR_REGION
 }
 
 
-resource "google_storage_bucket" "capstone-411615" {
-  name          = var.gcs_bucket_name
-  location      = var.location
+resource "google_storage_bucket" TF_VAR_STORAGE_BUCKET_NAME {
+  name          = TF_VAR_STORAGE_BUCKET_NAME
+  location      = TF_VAR_LOCATION
   force_destroy = true
 
 
@@ -32,7 +32,7 @@ resource "google_storage_bucket" "capstone-411615" {
 
 
 
-resource "google_bigquery_dataset" "capstone" {
-  dataset_id = var.bq_dataset_name
-  location   = var.location
+resource "google_bigquery_dataset" TF_VAR_BQ_DATASET_NAME {
+  dataset_id = TF_VAR_BQ_DATASET_NAME
+  location   = TF_VAR_LOCATION
 }
