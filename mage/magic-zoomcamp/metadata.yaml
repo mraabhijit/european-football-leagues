@@ -59,6 +59,7 @@ help_improve_mage: true
 
 features:
   dbt_v2: false
+  command_center: true
 pipelines:
   settings:
     triggers:
