@@ -162,6 +162,9 @@ Vizualizations for the dataset have been created using Looker Studio in attempts
 
 The link to dashboard can be found in this link: https://lookerstudio.google.com/reporting/3a0f0cd3-edec-49b2-96a7-c3192f5c91db/page/hAxuD
 
+The dashboard is not live anymore as the free trial for GCP has ended. ;(
+But you can view the example is the dashboard/ folder.
+
 ### 8. Remove Resources:
 
 Once the project is complete. Please remember to close mage first by running `docker-compose down` in a new terminal on your PC/VM by changing directory to `mage`. Lastly, close down the GCP resources by a simple `terraform destroy` from `terraform` directory.
